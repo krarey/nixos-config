@@ -4,31 +4,12 @@
     ./hardware/hyper-v.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "nomodeset" ];
 
   networking.hostName = "hyper-v";
-  time.timeZone = "America/New_York";
-
-  # Enable KDE with Wayland session
-  services.xserver = {
-    enable = true;
-    desktopManager.plasma5.enable = true;
-    displayManager.sddm.enable = true;
-  };
-
-  # Enable PipeWire
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
