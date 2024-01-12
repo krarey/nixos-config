@@ -14,9 +14,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIARgxhvXw0Pl1hPrimDE8YNcPpDhzelIMcTnMKBfHfZ/ kyle@opt.sh"
     ];
     packages = with pkgs; [
-      firefox
-      _1password
-      vscode.fhs
     ];
   };
 }
