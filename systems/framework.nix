@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs, ... }: {
   imports =[ ./hardware/framework.nix ];
 
   boot.loader.grub = {
