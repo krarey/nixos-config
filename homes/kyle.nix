@@ -30,6 +30,7 @@ in
   };
 
   programs.starship.enable = true;
+  programs.fzf.enable = true;
 
   programs.vim = {
     enable = true;
