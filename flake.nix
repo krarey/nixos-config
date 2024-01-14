@@ -11,6 +11,10 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
     unstable = import nixpkgs-unstable { 
       inherit system;
       config.allowUnfree = true;
@@ -19,7 +23,7 @@
   {
     nixosConfigurations = {
       hyper-v = nixpkgs.lib.nixosSystem {
-        inherit system;
+        inherit system pkgs;
         modules = [
           ./systems/common.nix
           ./systems/hyper-v.nix
@@ -27,7 +31,7 @@
         ];
       };
       framework = nixpkgs.lib.nixosSystem {
-        inherit system;
+        inherit system pkgs;
         modules = [
           ./systems/common.nix
           ./systems/framework.nix
