@@ -22,6 +22,10 @@
   services.fprintd.enable = true;
   services.flatpak.enable = true;
 
+  # Using fstrim.timer for now, until Linux 6.2.x enforces discard=async on btrfs by default
+  # Mostly because I don't want to change mount options and the iops threshold sysctl
+  services.fstrim.enable = true;
+
   # No touchy
   system.stateVersion = "23.11"; # Did you read the comment?
 }

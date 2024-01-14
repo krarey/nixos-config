@@ -15,7 +15,12 @@
   boot.resumeDevice = "/dev/disk/by-uuid/a553e774-7775-413f-9a5c-e89a87f2d690";
   boot.kernelParams = [ "resume_offset=1844480" ];
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/712236d6-f9bc-4e42-835e-5e9bb4d55c3f";
+  boot.initrd.luks.devices = {
+    cryptroot = {
+      device = "/dev/disk/by-uuid/712236d6-f9bc-4e42-835e-5e9bb4d55c3f";
+      allowDiscards = true;
+    };
+  };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a553e774-7775-413f-9a5c-e89a87f2d690";
