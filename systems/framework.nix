@@ -26,6 +26,10 @@
   # Using fstrim.timer for now, until Linux 6.2.x enforces discard=async on btrfs by default
   # Mostly because I don't want to change mount options and the iops threshold sysctl
   services.fstrim.enable = true;
+
+  # Gaming hardware
+  hardware.steam-hardware.enable = true;
+  hardware.xpadneo.enable = true;
   
   # Manage application-related services
   services.flatpak.enable = true;
