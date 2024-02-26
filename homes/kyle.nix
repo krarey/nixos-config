@@ -45,6 +45,7 @@ in
     pkgs.firefox
     pkgs._1password
     pkgs.vscode.fhs
+    pkgs.vivaldi
   ];
 
   # This value determines the Home Manager release that your

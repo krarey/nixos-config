@@ -16,6 +16,13 @@
     wget
   ];
 
+  environment.etc = {
+    "1password/custom_allowed_browsers" = {
+      text = "vivaldi-bin";
+      mode = "0755";
+    };
+  };
+
   # Manage network-related services
   programs.ssh.startAgent = true;
   services.avahi.enable = true;
@@ -34,6 +41,13 @@
   # Manage application-related services
   services.flatpak.enable = true;
   virtualisation.podman.enable = true;
+
+  # 1Password
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "kyle" ];
+  };
 
 
   # No touchy
