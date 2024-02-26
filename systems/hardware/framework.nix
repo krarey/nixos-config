@@ -12,47 +12,47 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.resumeDevice = "/dev/disk/by-uuid/a553e774-7775-413f-9a5c-e89a87f2d690";
-  boot.kernelParams = [ "resume_offset=1844480" ];
+  boot.resumeDevice = "/dev/disk/by-uuid/38f94505-b7ac-4ea7-bd5b-a7ae9639fef2";
+  boot.kernelParams = [ "resume_offset=533760" ];
 
   boot.initrd.luks.devices = {
     cryptroot = {
-      device = "/dev/disk/by-uuid/712236d6-f9bc-4e42-835e-5e9bb4d55c3f";
+      device = "/dev/disk/by-uuid/06e85410-eb39-4729-95e1-da5cf141a9be";
       allowDiscards = true;
     };
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/a553e774-7775-413f-9a5c-e89a87f2d690";
+    { device = "/dev/disk/by-uuid/38f94505-b7ac-4ea7-bd5b-a7ae9639fef2";
       fsType = "btrfs";
       options = [ "subvol=@" "compress=zstd" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/a553e774-7775-413f-9a5c-e89a87f2d690";
+    { device = "/dev/disk/by-uuid/38f94505-b7ac-4ea7-bd5b-a7ae9639fef2";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/a553e774-7775-413f-9a5c-e89a87f2d690";
+    { device = "/dev/disk/by-uuid/38f94505-b7ac-4ea7-bd5b-a7ae9639fef2";
       fsType = "btrfs";
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/a553e774-7775-413f-9a5c-e89a87f2d690";
+    { device = "/dev/disk/by-uuid/38f94505-b7ac-4ea7-bd5b-a7ae9639fef2";
       fsType = "btrfs";
       options = [ "subvol=@var_log" "compress=zstd" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8A02-A4C7";
+    { device = "/dev/disk/by-uuid/87F4-FDE8";
       fsType = "vfat";
     };
 
   fileSystems."/var/swap" = {
-    device = "/dev/disk/by-uuid/a553e774-7775-413f-9a5c-e89a87f2d690";
+    device = "/dev/disk/by-uuid/38f94505-b7ac-4ea7-bd5b-a7ae9639fef2";
     fsType = "btrfs";
     options = [ "subvol=@swap" "noatime" ];
   };
