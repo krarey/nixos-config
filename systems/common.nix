@@ -7,6 +7,11 @@
 
   programs.zsh.enable = true;
 
+  programs.ssh.extraConfig = ''
+    Host *
+      StrictHostKeyChecking accept-new
+  '';
+
   users.users.kyle = {
     isNormalUser = true;
     description = "Kyle Rarey";
