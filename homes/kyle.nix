@@ -43,9 +43,10 @@ in
     unstable.consul
     unstable.terraform
     pkgs.firefox
-    pkgs._1password
     pkgs.vscode.fhs
     pkgs.vivaldi
+    pkgs.kind
+    pkgs.kubectl
   ];
 
   # This value determines the Home Manager release that your
