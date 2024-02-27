@@ -32,6 +32,7 @@
       };
       framework = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
+        specialArgs = { inherit unstable; };
         modules = [
           ./systems/common.nix
           ./systems/framework.nix

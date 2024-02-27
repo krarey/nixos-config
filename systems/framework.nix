@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, unstable, ... }: {
   imports =[ ./hardware/framework.nix ];
 
   boot.loader.grub = {
@@ -48,6 +48,11 @@
     enable = true;
     polkitPolicyOwners = [ "kyle" ];
   };
+
+  # Override power-profiles-daemon
+  nixpkgs.overlays = [ (final: prev: {
+    power-profiles-daemon = unstable.power-profiles-daemon;
+  })];
 
 
   # No touchy
