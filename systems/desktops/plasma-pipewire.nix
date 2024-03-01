@@ -2,10 +2,7 @@
   services.xserver = {
     enable = true;
     displayManager.sddm.enable = true;
-    desktopManager.plasma5 = {
-      enable = true;
-      useQtScaling = true;
-    };
+    desktopManager.plasma6.enable = true;
   };
   security.rtkit.enable = true;
   services.pipewire = {
