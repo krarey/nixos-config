@@ -42,9 +42,9 @@ in
     unstable.vault
     unstable.consul
     unstable.terraform
+    unstable.vivaldi
     pkgs.firefox
     pkgs.vscode.fhs
-    pkgs.vivaldi
     pkgs.kind
     pkgs.kubectl
   ];
