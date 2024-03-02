@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
 let
   sessionVariables = {
     NOMAD_ADDR = "https://nomad.service.consul:4646";
@@ -37,17 +37,16 @@ in
     defaultEditor = true;
   };
 
-  home.packages = with pkgs; [
-    nomad_1_7
-    vault
-    consul
-    terraform
-    vivaldi
-    firefox
-    vscode.fhs
-    kind
-    kubectl
-    discord
+  home.packages = [
+    unstable.nomad_1_7
+    unstable.vault
+    unstable.consul
+    unstable.terraform
+    unstable.vivaldi
+    pkgs.firefox
+    pkgs.vscode.fhs
+    pkgs.kind
+    pkgs.kubectl
   ];
 
   # This value determines the Home Manager release that your

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, unstable, ... }: {
   imports =[ ./hardware/framework.nix ];
 
   boot.loader.grub = {
@@ -50,6 +50,13 @@
   };
 
   # Power Management
+
+  # Override power-profiles-daemon with unstable
+  # This is temporary until the next NixOS release, to pull in AMD Phoenix patches
+  nixpkgs.overlays = [ (final: prev: {
+    power-profiles-daemon = unstable.power-profiles-daemon;
+  })];
+
   # On lid close, sleep for 1 hour, then hibernate
   systemd.sleep.extraConfig = "HibernateDelaySec=1h";
   services.logind.lidSwitch = "suspend-then-hibernate";
