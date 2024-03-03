@@ -13,7 +13,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.resumeDevice = "/dev/disk/by-uuid/38f94505-b7ac-4ea7-bd5b-a7ae9639fef2";
-  boot.kernelParams = [ "resume_offset=533760" ];
+  boot.kernelParams = [ "resume_offset=533760" "amdgpu.sg_display=0" ];
 
   boot.initrd.luks.devices = {
     cryptroot = {
