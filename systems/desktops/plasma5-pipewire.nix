@@ -14,4 +14,5 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  programs.partition-manager.enable = true;
 }
