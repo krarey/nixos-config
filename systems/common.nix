@@ -1,4 +1,5 @@
 { pkgs, ...}: {
+  imports = [ ../caches/cachix.nix ];
   environment.localBinInPath = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   time.timeZone = "America/New_York";
