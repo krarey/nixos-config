@@ -17,6 +17,7 @@ in
     enable = true;
     userName = "Kyle Rarey";
     userEmail = "kyle.rarey@gmail.com";
+    extraConfig.init.defaultBranch = "main";
   };
 
   programs.bash = {
@@ -31,6 +32,7 @@ in
 
   programs.starship.enable = true;
   programs.fzf.enable = true;
+  programs.direnv.enable = true;
 
   programs.vim = {
     enable = true;
